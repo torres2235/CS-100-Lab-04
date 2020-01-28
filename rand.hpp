@@ -4,9 +4,11 @@
 #include "base.hpp"
 
 class Rand : public Base {
+    private:
+        double num;
     public:
-        Rand(double value) : Base() { }
-        virtual double evaluate () {return rand() % 100;}
+        Rand() : Base() {num = rand() % 100; }
+        virtual double evaluate () {return num;}
         virtual std::string stringify() {return ""; }
 };
 

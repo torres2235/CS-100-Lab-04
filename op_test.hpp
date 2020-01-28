@@ -15,4 +15,8 @@ TEST(OpTest, OpEvaluateString) {
     EXPECT_EQ(test->stringify(), "8");
 }
 
+TEST(OpTest, OpStringDecimals) {
+    Op* test = new Op(7.5);
+    EXPECT_EQ(test->stringify(), "7.5");
+}
 #endif //__OP_TEST_HPP__
