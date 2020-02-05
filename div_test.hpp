@@ -14,4 +14,19 @@ TEST(DivTest, DivNegative) {
 	EXPECT_EQ(test->evaluate(), -7);
 }
 
+TEST(DivTest, DivDecimal) {
+	Div* test = new Div(1,4);
+	EXPECT_EQ(test->evaluate(), 0.25);
+}
+
+TEST(DivTest, DivEvaluateString) {
+	Div* test = new Div(6,3);
+	EXPECT_EQ(test->stringify(), "6/3");
+}
+
+TEST(DivTest, DivEvaluateNegString) {
+	Div* test = new Div(5,-6);
+	EXPECT_EQ(test->stringify(), "5/-6");
+}
+
 #endif //__DIV_TEST_HPP__
