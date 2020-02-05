@@ -15,6 +15,11 @@ TEST(PowTest, PowEvaluateNegativeBase) {
 	EXPECT_EQ(test->evaluate(), -3125);
 }
 
+TEST(PowTest, PowEvaluateNegativeExpo) {
+	Pow* test = new Pow(2,-3);
+	EXPECT_EQ(test->evaluate(),0.125);
+} 
+
 TEST(PowTest, PowString) {
 	Pow* test = new Pow (7,7);
 	EXPECT_EQ(test->stringify(), "7**7");

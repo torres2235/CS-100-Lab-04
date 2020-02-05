@@ -19,6 +19,11 @@ TEST(DivTest, DivDecimal) {
 	EXPECT_EQ(test->evaluate(), 3);
 }
 
+TEST(DivTest, DivZero) {
+	Div* test = new Div(2,0);
+	EXPECT_EQ(test->evaluate(), 0);
+}
+
 TEST(DivTest, DivEvaluateString) {
 	Div* test = new Div(6,3);
 	EXPECT_EQ(test->stringify(), "6/3");
