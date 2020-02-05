@@ -10,4 +10,19 @@ TEST(MultTest, MultEvaluateNonZero) {
     EXPECT_EQ(test->evaluate(), 4);
 }
 
+TEST(MultTest, MultEvaulateNegative) {
+    Mult* test = new Mult(-6,3);
+    EXPECT_EQ(test->evaluate(), -18);
+}
+
+TEST(MultTest, MultEvaluateString) {
+    Mult* test = new Mult(5,3);
+    EXPECT_EQ(test->stringify(), "5*3");
+}
+
+TEST(MultTest, MultEvaluateNegativeString) {
+    Mult* test = new Mult(4,-2);
+    EXPECT_EQ(test->stringify(), "4*-2");
+}
+
 #endif //__MULT_TEST_HPP__

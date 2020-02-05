@@ -9,4 +9,9 @@ TEST(SubTest, SubEvaluateNonZero) {
 	EXPECT_EQ(test->evaluate(), 0);
 }
 
+TEST(SubTest, SubNegative) {
+	Sub* test = new Sub(0,5);
+	EXPECT_EQ(test->evaluate(), -5);
+}
+
 #endif //__SUB_TEST_HPP__
