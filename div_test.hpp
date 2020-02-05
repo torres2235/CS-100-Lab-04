@@ -15,8 +15,8 @@ TEST(DivTest, DivNegative) {
 }
 
 TEST(DivTest, DivDecimal) {
-	Div* test = new Div(1,4);
-	EXPECT_EQ(test->evaluate(), 0.25);
+	Div* test = new Div(2.1,0.7);
+	EXPECT_EQ(test->evaluate(), 3);
 }
 
 TEST(DivTest, DivEvaluateString) {
