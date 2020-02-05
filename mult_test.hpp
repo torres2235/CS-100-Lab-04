@@ -10,9 +10,14 @@ TEST(MultTest, MultEvaluateNonZero) {
     EXPECT_EQ(test->evaluate(), 4);
 }
 
-TEST(MultTest, MultEvaulateNegative) {
+TEST(MultTest, MultEvaluateNegative) {
     Mult* test = new Mult(-6,3);
     EXPECT_EQ(test->evaluate(), -18);
+}
+
+TEST(MultTest, MultEvaluateDecimal) {
+    Mult* test = new Mult(2.5,2.5);
+    EXPECT_EQ(test->evaluate(), 6.25);
 }
 
 TEST(MultTest, MultEvaluateString) {
