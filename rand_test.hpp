@@ -7,7 +7,7 @@
 
 TEST(RandTest, RandEvaluateNonZero) {
     Rand* test = new Rand();
-    EXPECT_EQ(test->evaluate(), 83);
+    EXPECT_LE(test->evaluate(), 100);
 }
 
 #endif //__RAND_TEST_HPP__
