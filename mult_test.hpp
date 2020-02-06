@@ -6,27 +6,30 @@
 #include "mult.hpp"
 
 TEST(MultTest, MultEvaluateNonZero) {
-    Mult* test = new Mult(2,2);
-    EXPECT_EQ(test->evaluate(), 4);
+    Base* val1 = new Op(3);
+    Base* val2 = new Op(3);
+    Base* test = new Mult(val1,val2);
+    EXPECT_EQ(test->evaluate(),9);
 }
 
 TEST(MultTest, MultEvaluateNegative) {
-    Mult* test = new Mult(-6,3);
-    EXPECT_EQ(test->evaluate(), -18);
-}
-
-TEST(MultTest, MultEvaluateDecimal) {
-    Mult* test = new Mult(2.5,2.5);
-    EXPECT_EQ(test->evaluate(), 6.25);
+    Base* val1 = new Op(-6);
+    Base* val2 = new Op(3);
+    Base* test = new Mult(val1,val2);
+    EXPECT_EQ(test->evaluate(),-18);	
 }
 
 TEST(MultTest, MultEvaluateString) {
-    Mult* test = new Mult(5,3);
+    Base* val1 = new Op(5);
+    Base* val2 = new Op(3);
+    Mult* test = new Mult(val1,val2);
     EXPECT_EQ(test->stringify(), "5*3");
 }
 
 TEST(MultTest, MultEvaluateNegativeString) {
-    Mult* test = new Mult(4,-2);
+    Base* val1 = new Op(4);
+    Base* val2 = new Op(-2);
+    Mult* test = new Mult(val1,val2);
     EXPECT_EQ(test->stringify(), "4*-2");
 }
 
