@@ -7,12 +7,13 @@
 
 class Pow : public Base {
     private:
-        double val1, val2, result;
-        std::ostringstream stream;
+	Base* val1;
+	Base* val2;
     public:
-        Pow(double value1, double value2) : Base() {val1 = value1; val2 = value2; result = pow(value1, value2); }
-	virtual double evaluate() {return result; }
-	virtual std::string stringify() {stream << val1 << "**" << val2; return stream.str(); }
+        Pow(Base* value1, Base* value2) : Base() {val1 = value1; val2 = value2;}
+	virtual double evaluate() {return pow(val1->evaluate(),val2->evaluate());}
+	virtual std::string stringify() {return val1->stringify() + "**" + val2->stringify();}
+
 };
 
 #endif //__POW_HPP__

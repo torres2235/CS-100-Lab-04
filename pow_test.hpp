@@ -4,24 +4,33 @@
 #include "gtest/gtest.h"
 
 #include "pow.hpp"
+#include "op.hpp"
 
 TEST(PowTest, PowEvaluateNonZero) {
-	Pow* test = new Pow(2,3);
+	Base* val1 = new Op(2);
+        Base* val2 = new Op(3);
+	Pow* test = new Pow(val1,val2);
 	EXPECT_EQ(test->evaluate(), 8);
 }
 
 TEST(PowTest, PowEvaluateNegativeBase) {
-	Pow* test = new Pow(-5,5);
+	Base* val1 = new Op(-5);
+        Base* val2 = new Op(5);
+	Pow* test = new Pow(val1,val2);
 	EXPECT_EQ(test->evaluate(), -3125);
 }
 
 TEST(PowTest, PowEvaluateNegativeExpo) {
-	Pow* test = new Pow(2,-3);
+	Base* val1 = new Op(2);
+        Base* val2 = new Op(-3);
+	Pow* test = new Pow(val1,val2);
 	EXPECT_EQ(test->evaluate(),0.125);
 } 
 
 TEST(PowTest, PowString) {
-	Pow* test = new Pow (7,7);
+	Base* val1 = new Op(7);
+        Base* val2 = new Op(7);
+	Pow* test = new Pow (val1,val2);
 	EXPECT_EQ(test->stringify(), "7**7");
 }
 

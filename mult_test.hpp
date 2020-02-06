@@ -4,6 +4,7 @@
 #include "gtest/gtest.h"
 
 #include "mult.hpp"
+#include "op.hpp"
 
 TEST(MultTest, MultEvaluateNonZero) {
     Base* val1 = new Op(3);
