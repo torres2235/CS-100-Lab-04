@@ -23,7 +23,7 @@ TEST(DivTest, DivDecimal) {
 	Base* val1 = new Op(2.1);
 	Base* val2 = new Op(0.7);
 	Base* test = new Div(val1,val2);
-	EXPECT_EQ(test->evaluate(), 3);
+	EXPECT_DOUBLE_EQ(test->evaluate(), 3);
 }
 
 TEST(DivTest, DivZero) {

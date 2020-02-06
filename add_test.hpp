@@ -23,7 +23,7 @@ TEST(AddTest, AddEvalulateDecimals) {
 	Base* val1 = new Op(5.4);
         Base* val2 = new Op(-3.1);
 	Base* test = new Add(val1,val2);
-	EXPECT_EQ(test->evaluate(), 2.3);
+	EXPECT_DOUBLE_EQ(test->evaluate(), 2.3);
 }
 
 TEST(AddTest, AddString) {
