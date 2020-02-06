@@ -3,34 +3,47 @@
 
 #include "gtest/gtest.h"
 #include "div.hpp"
+#include "op.hpp"
 
 TEST(DivTest, DivEvaluateNonZero) {
-	Div* test = new Div(2,2);
+	Base* val1 = new Op(2);
+	Base* val2 = new Op(2);
+	Base* test = new Div(val1,val2);
 	EXPECT_EQ(test->evaluate(), 1);
 }
 
 TEST(DivTest, DivNegative) {
-	Div* test = new Div(-14,2);
+	Base* val1 = new Op(-14);
+	Base* val2 = new Op(2);
+	Base* test = new Div(val1,val2);
 	EXPECT_EQ(test->evaluate(), -7);
 }
 
 TEST(DivTest, DivDecimal) {
-	Div* test = new Div(2.1,0.7);
+	Base* val1 = new Op(2.1);
+	Base* val2 = new Op(0.7);
+	Base* test = new Div(val1,val2);
 	EXPECT_EQ(test->evaluate(), 3);
 }
 
 TEST(DivTest, DivZero) {
-	Div* test = new Div(2,0);
+	Base* val1 = new Op(2);
+	Base* val2 = new Op(0);
+	Base* test = new Div(val1,val2);
 	EXPECT_EQ(test->evaluate(), 0);
 }
 
 TEST(DivTest, DivEvaluateString) {
-	Div* test = new Div(6,3);
+	Base* val1 = new Op(6);
+	Base* val2 = new Op(3);
+	Base* test = new Div(val1, val2);
 	EXPECT_EQ(test->stringify(), "6/3");
 }
 
 TEST(DivTest, DivEvaluateNegString) {
-	Div* test = new Div(5,-6);
+	Base* val1 = new Op(5);
+	Base* val2 = new Op(-6);
+	Base* test = new Div(val1,val2);
 	EXPECT_EQ(test->stringify(), "5/-6");
 }
 
